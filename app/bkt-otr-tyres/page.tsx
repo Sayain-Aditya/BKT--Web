@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { bktProducts, whatsapp } from "../../lib/data";
 import CatalogueClient from "./CatalogueClient";
 
