@@ -25,7 +25,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const quoteLink = `${whatsapp}?text=${encodeURIComponent(quoteText)}`;
   const related = bktProducts.filter((item) => item.id !== product.id && (item.application === product.application || item.type === product.type)).slice(0, 3);
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bkt-web.vercel.app";
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",

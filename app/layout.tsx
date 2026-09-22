@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://bkt-web.vercel.app"),
+  alternates: { canonical: "/" },
   title: "BKT OTR Tyres in Uttar Pradesh | M/s Madhwendra Authorized Distributor BKT",
   description:
     "M/s Madhwendra Authorized Distributor BKT, operated by MKS Concord LLP, supplies BKT OTR tyres for construction, mining, earthmoving, infrastructure and industrial applications across Uttar Pradesh.",
