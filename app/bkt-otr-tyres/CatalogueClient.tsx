@@ -37,7 +37,7 @@ export default function CatalogueClient({ products }: { products: BktProduct[] }
           {applications.map((item) => <option key={item}>{item}</option>)}
         </select>
       </div>
-      <button className="filter-reset" onClick={() => { setQuery(""); setApplication("All applications"); }}>Reset</button>
+      <button type="button" className="filter-reset" onClick={() => { setQuery(""); setApplication("All applications"); }}>Reset</button>
     </div>
 
     <div className="catalog-result-bar"><strong>{filtered.length}</strong> tyre {filtered.length === 1 ? "option" : "options"} shown <span>• Prices are available on enquiry</span></div>

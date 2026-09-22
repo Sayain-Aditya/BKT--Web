@@ -1,21 +1,33 @@
-# MKS Concord LLP × BKT OTR Website — V17
+# MKS Concord LLP — BKT OTR Tyres Website
 
-BKT-first Next.js website for M/s Madhwendra Authorized Distributor BKT, operated by MKS Concord LLP.
+V19 mobile, UI and performance polish.
 
-## V17 — Request a Quotation
-- Added dedicated `/request-quote` page.
-- Added enquiry form that prepares a detailed WhatsApp quotation request.
-- Fields: name, phone/WhatsApp, tyre size, BKT model, vehicle/equipment, application, quantity, and Uttar Pradesh location.
-- Added Request a Quote navigation and footer links.
-- No public tyre prices.
-- Customers can still call MKS directly.
+## Run locally
 
-## Run
+Requires Node.js 20.9+.
+
 ```bash
 npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+Open http://localhost:3000.
 
-Node.js 20.9+ recommended.
+## Production
+
+```bash
+npm run build
+npm run start
+```
+
+Set `NEXT_PUBLIC_SITE_URL` to the final production domain before deployment so sitemap and structured-data URLs use the real domain.
+
+## V19 changes
+
+- Improved mobile header sizing and removed mobile navigation overflow risk.
+- Made major buttons/touch targets at least 44px high.
+- Improved catalogue filter responsiveness.
+- Improved mobile product/quote layouts.
+- Added reduced-motion support.
+- Added intrinsic dimensions to the homepage hero tyre image to reduce layout shift.
+- Kept the vehicle/equipment filter removed; vehicle/equipment remains searchable and visible on product cards.

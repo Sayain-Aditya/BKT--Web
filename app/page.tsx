@@ -77,7 +77,7 @@ export default function Home() {
             <div className="hero-v2-ring ring-a" />
             <div className="hero-v2-ring ring-b" />
             <div className="hero-v2-image-frame">
-              <img src="https://storage.googleapis.com/bkt-prod-storage/43d2798f-59c8-44ea-b8c4-8af13852515b" alt="BKT OTR tyre" />
+              <img src="https://storage.googleapis.com/bkt-prod-storage/43d2798f-59c8-44ea-b8c4-8af13852515b" alt="BKT OTR tyre for heavy construction and industrial applications" width="900" height="900" loading="eager" />
             </div>
             <div className="hero-v2-tag tag-top"><small>OFF-THE-ROAD</small><strong>BKT TYRES</strong></div>
             <div className="hero-v2-tag tag-bottom"><span>OTR</span><div><strong>Ready for work.</strong><small>Ask MKS for availability</small></div></div>
