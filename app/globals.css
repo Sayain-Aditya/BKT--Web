@@ -11,6 +11,13 @@
 
 * { box-sizing: border-box; }
 
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0d110f; }
+::-webkit-scrollbar-thumb { background: var(--green); }
+::-webkit-scrollbar-thumb:hover { background: #a8d400; }
+* { scrollbar-width: thin; scrollbar-color: var(--green) #0d110f; }
+
 html { scroll-behavior: smooth; }
 
 body {
