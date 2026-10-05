@@ -1,33 +1,40 @@
-# MKS Concord LLP — BKT OTR Tyres Website
+# MKS Concord LLP — BKT OTR Tyres (V22)
 
-V19 mobile, UI and performance polish.
+Next.js website for MKS Concord LLP's BKT OTR tyre distribution business.
+
+## Stack
+- Next.js 16.3.3
+- React 19.2.1
+- TypeScript
+- App Router
+- Pure CSS
+
+## V22 focus
+- BKT-first homepage and clearer conversion path
+- Shared responsive site header across pages
+- Refined BKT OTR catalogue search/filter experience
+- No vehicle/equipment filter; vehicle/equipment remains searchable and visible on cards
+- Improved product-page hierarchy: BKT model + tyre size
+- Stronger WhatsApp and quotation CTAs
+- Refined request-quote flow
+- Mobile navigation and responsive polish
+- Existing sitemap, robots, metadata and structured data preserved
+- Existing 33 catalogue entries preserved from V21
 
 ## Run locally
-
-Requires Node.js 20.9+.
-
 ```bash
 npm install
 npm run dev
 ```
 
-Open http://localhost:3000.
-
-## Production
-
+## Production build
 ```bash
 npm run build
-npm run start
+npm start
 ```
 
-Set `NEXT_PUBLIC_SITE_URL` to the final production domain before deployment so sitemap and structured-data URLs use the real domain.
+## Site URL
+Default production URL:
+`https://bkt-web.vercel.app`
 
-## V19 changes
-
-- Improved mobile header sizing and removed mobile navigation overflow risk.
-- Made major buttons/touch targets at least 44px high.
-- Improved catalogue filter responsiveness.
-- Improved mobile product/quote layouts.
-- Added reduced-motion support.
-- Added intrinsic dimensions to the homepage hero tyre image to reduce layout shift.
-- Kept the vehicle/equipment filter removed; vehicle/equipment remains searchable and visible on product cards.
+Set `NEXT_PUBLIC_SITE_URL` when a custom domain is available.

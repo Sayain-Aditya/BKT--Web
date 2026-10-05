@@ -1,25 +1,26 @@
-import QuoteForm from './QuoteForm';
-import { phone } from '../../lib/data';
+import type { Metadata } from "next";
+import QuoteForm from "./QuoteForm";
+import SiteHeader from '../components/SiteHeader';
 
-export const metadata = {
-  title: 'Request a BKT OTR Tyre Quotation | MKS Concord LLP',
-  description: 'Request BKT OTR tyre availability and quotation from MKS Concord LLP. Share tyre size, vehicle or equipment, application, quantity and location.',
+export const metadata: Metadata = {
+  title: "Request a BKT OTR Tyre Quotation | MKS Concord LLP",
+  description: "Request BKT OTR tyre availability and quotation from MKS Concord LLP. Share tyre size, vehicle or equipment, application, quantity and location.",
+  alternates: { canonical: "/request-quote" },
+  openGraph: {
+    title: "Request a BKT OTR Tyre Quotation | MKS Concord LLP",
+    description: "Share your BKT OTR tyre requirement with MKS Concord LLP for availability and quotation across Uttar Pradesh.",
+    type: "website",
+    url: "/request-quote"
+  }
 };
 
-export default function RequestQuotePage() {
+export default async function RequestQuotePage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const params = await searchParams;
+  const get = (key: string) => { const value = params[key]; return Array.isArray(value) ? value[0] ?? '' : value ?? ''; };
+  const initial = { model: get('model'), size: get('size'), vehicle: get('vehicle'), application: get('application'), quantity: get('quantity'), company: get('company'), location: get('location') };
   return (
     <main>
-      <header className="site-header"><div className="container nav">
-        <a className="brand" href="/" aria-label="M/s Madhwendra Authorized Distributor BKT">
-          <img src="/images/bkt-logo.png" alt="BKT Tyres" className="bkt-logo" />
-          <span className="brand-divider" />
-          <img src="/images/mks-group-logo.jpeg" alt="MKS logo" className="mks-logo" />
-          <span className="brand-divider" />
-          <span className="brand-text"><strong>M/s Madhwendra</strong><small>Authorized Distributor BKT</small><small>Operated by MKS Concord LLP</small></span>
-        </a>
-        <nav className="desktop-nav"><a href="/">Home</a><a href="/bkt-otr-tyres">OTR Tyre Range</a><a href="/#applications">Applications</a><a href="/#faq">FAQ</a></nav>
-        <a className="nav-cta" href={`tel:+91${phone}`}>Call MKS</a>
-      </div></header>
+      <SiteHeader active="quote" />
 
       <section className="quote-page-hero">
         <div className="container quote-page-grid">
@@ -27,9 +28,10 @@ export default function RequestQuotePage() {
             <p className="section-kicker light">BKT OTR TYRES • UTTAR PRADESH</p>
             <h1>Request a quotation for your tyre requirement.</h1>
             <p className="quote-page-lead">Tell us the BKT OTR tyre, vehicle or equipment and quantity you need. We will use the details to understand your requirement and respond with availability and quotation.</p>
+            <div className="quote-form-points"><span>01 Contact details</span><span>02 Tyre requirement</span><span>03 WhatsApp enquiry</span></div>
             <div className="quote-benefits"><span>✓ No public pricing</span><span>✓ WhatsApp enquiry</span><span>✓ Supply across Uttar Pradesh</span><span>✓ Head Office: Gorakhpur</span></div>
           </div>
-          <div className="quote-form-card"><QuoteForm /></div>
+          <div className="quote-form-card"><QuoteForm initial={initial} /></div>
         </div>
       </section>
 

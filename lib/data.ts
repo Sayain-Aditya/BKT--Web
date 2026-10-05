@@ -79,7 +79,7 @@ export const applications = [
 
 export const faqs = [
   ["What are BKT OTR tyres?", "BKT Off-The-Road (OTR) tyres are tyres designed for heavy construction and industrial vehicles and equipment that operate off the road. They are used across demanding environments such as construction, mining, quarrying, earthmoving and infrastructure work."],
-  ["Do you supply BKT OTR tyres across Uttar Pradesh?", "Yes. M/s Madhwendra Authorized Distributor BKT, operated by MKS Concord LLP, supplies BKT OTR tyres across Uttar Pradesh. Our head office is in Gorakhpur."],
+  ["Do you supply BKT OTR tyres across Uttar Pradesh?", "Yes. M/S Madhwendra Kumar Singh, operated by MKS Concord LLP, supplies BKT OTR tyres across Uttar Pradesh. Our head office is in Gorakhpur."],
   ["How do I choose the right BKT OTR tyre?", "Start with your vehicle or equipment type and tyre size. The suitable tyre also depends on the application and working conditions. Our product range shows the vehicle or equipment type where available. If you cannot find your requirement, contact us for assistance."],
   ["Can I see tyre prices on the website?", "No. Tyre prices are not displayed publicly. Tell us which BKT OTR tyre or vehicle requirement you are looking for through WhatsApp or call, and we can provide the applicable quotation."],
   ["How can I request a quotation?", "Send your tyre size or model, vehicle/equipment type, application and quantity through WhatsApp or call MKS Concord LLP. Our team can check the requirement and send you a quotation."],

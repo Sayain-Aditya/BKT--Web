@@ -1,4 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
+import SiteHeader from "../../components/SiteHeader";
+import ProductViewer from "../../components/ProductViewer";
 import { notFound } from "next/navigation";
 import { bktProducts, whatsapp, phone } from "../../../lib/data";
 
@@ -12,7 +15,14 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   if (!product) return { title: "BKT OTR Tyre | MKS Concord LLP" };
   return {
     title: `${product.name} | BKT OTR Tyres | MKS Concord LLP`,
-    description: `${product.name} — ${product.size}. BKT OTR tyre for ${product.application.toLowerCase()}. Contact MKS Concord LLP for availability and quotation across Uttar Pradesh.`
+    description: `${product.name} — ${product.size}. BKT OTR tyre for ${product.application.toLowerCase()}. Contact MKS Concord LLP for availability and quotation across Uttar Pradesh.`,
+    alternates: { canonical: `/bkt-otr-tyres/${product.id}` },
+    openGraph: {
+      title: `${product.name} ${product.size} | BKT OTR Tyres | MKS Concord LLP`,
+      description: `BKT OTR tyre for ${product.application.toLowerCase()}. Ask MKS Concord LLP for availability and quotation across Uttar Pradesh.`,
+      type: "website",
+      url: `/bkt-otr-tyres/${product.id}`
+    }
   };
 }
 
@@ -46,20 +56,22 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
   return <main>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
-    <header className="site-header"><div className="container nav"><Link className="brand" href="/"><span className="range-brand-mark">BKT</span><span className="brand-divider"/><span className="brand-text"><strong>M/s Madhwendra</strong><small>Authorized Distributor BKT</small><small>Operated by MKS Concord LLP</small></span></Link><nav className="desktop-nav"><Link href="/">Home</Link><Link href="/#about">MKS Concord LLP</Link><Link className="active-nav" href="/bkt-otr-tyres">OTR Tyre Range</Link><Link href="/#applications">Applications</Link></nav><a className="nav-cta" href="/request-quote">Request a Quote</a></div></header>
+    <SiteHeader active="range" showTopbar={false} />
 
     <div className="product-breadcrumb"><div className="container"><Link href="/">Home</Link><span>›</span><Link href="/bkt-otr-tyres">BKT OTR Tyres</Link><span>›</span><strong>{product.name}</strong></div></div>
 
     <section className="section product-detail"><div className="container product-detail-grid">
-      <div className="viewer-shell">
-        <div className="viewer-badge">BKT OTR TYRE</div>
-        <div className="viewer-stage product-hero-stage"><img src={product.image} alt={`${product.name} BKT OTR tyre`} /></div>
-        <div className="viewer-controls"><span>Product image</span><span>BKT OTR range</span><span>Quotation on enquiry</span></div>
-      </div>
+      <ProductViewer
+        image={product.image}
+        name={product.name}
+        size={product.size}
+        application={product.application}
+      />
 
       <div className="detail-copy">
         <p className="product-label">BKT OTR TYRE</p>
-        <h1>{product.name}</h1>
+        <div className="detail-model">{product.name.replace(`${product.size} `, "")}</div>
+        <h1>{product.size}</h1>
         <p className="detail-lead">A BKT OTR tyre option for <strong>{product.application.toLowerCase()}</strong>. Confirm the tyre against your machine, operating conditions and requirement with our team.</p>
 
         <div className="detail-highlights">
@@ -69,9 +81,9 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
           <div><b>VEHICLE / EQUIPMENT</b><span>{product.machinery}</span></div>
         </div>
 
-        <div className="detail-note"><strong>Need the price or availability?</strong><span>Send us the tyre requirement through WhatsApp or call us. We can check availability and provide a quotation.</span></div>
-        <div className="hero-actions"><a className="button button-primary" href={quoteLink} target="_blank" rel="noreferrer">Ask for Price on WhatsApp ↗</a><a className="button button-ghost" href={`tel:+91${phone}`}>Call MKS Concord LLP</a></div>
-        <p className="product-service-note">MKS Concord LLP supplies BKT OTR tyres across Uttar Pradesh. Head Office: Gorakhpur, Uttar Pradesh.</p>
+        <div className="detail-note"><strong>Need price or availability?</strong><span>This tyre is carried into the quote form automatically, so you can send your exact requirement without re-entering the model and size.</span></div>
+        <div className="hero-actions"><a className="button button-primary" href={quoteLink} target="_blank" rel="noreferrer">Ask for Price on WhatsApp ↗</a><Link className="button button-ghost" href={`/request-quote?model=${encodeURIComponent(product.name)}&size=${encodeURIComponent(product.size)}&vehicle=${encodeURIComponent(product.machinery)}&application=${encodeURIComponent(product.application)}`}>Request Quote ↗</Link></div>
+        <p className="product-service-note">Supplied by MKS Concord LLP across Uttar Pradesh • Head Office: Gorakhpur</p>
       </div>
     </div></section>
 
@@ -80,8 +92,8 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
       <div><p>Our catalogue is designed to help you identify a BKT OTR tyre by size, application and vehicle/equipment information. If your requirement is not listed, contact MKS Concord LLP and share your tyre size or machine details.</p><a className="text-link" href={whatsapp} target="_blank" rel="noreferrer">Talk to us on WhatsApp ↗</a></div>
     </div></section>
 
-    {related.length > 0 && <section className="section related-products"><div className="container"><div className="section-head-row"><div><p className="section-kicker">RELATED BKT OPTIONS</p><h2>More tyres to explore.</h2></div><Link className="text-link" href="/bkt-otr-tyres">View complete range ↗</Link></div><div className="related-grid">{related.map((item) => <Link className="related-card" href={`/bkt-otr-tyres/${item.id}`} key={item.id}><div className="related-image"><img src={item.image} alt={item.name} /></div><div><span>{item.size}</span><h3>{item.name}</h3><small>{item.application}</small></div></Link>)}</div></div></section>}
+    {related.length > 0 && <section className="section related-products"><div className="container"><div className="section-head-row"><div><p className="section-kicker">RELATED BKT OPTIONS</p><h2>More tyres to explore.</h2></div><Link className="text-link" href="/bkt-otr-tyres">View complete range ↗</Link></div><div className="related-grid">{related.map((item) => <Link className="related-card" href={`/bkt-otr-tyres/${item.id}`} key={item.id}><div className="related-image tyre-related-image"><Image src={item.image} alt={`${item.name} BKT OTR tyre`} width={500} height={500} loading="lazy" sizes="(max-width: 700px) 90vw, 260px" /></div><div><span>{item.size}</span><h3>{item.name}</h3><small>{item.application}</small></div></Link>)}</div></div></section>}
 
-    <section className="section product-final-cta"><div className="container"><div><p className="section-kicker">BKT OTR TYRES • UTTAR PRADESH</p><h2>Ready to enquire about this tyre?</h2><p>Send us the tyre size, vehicle/equipment and quantity. We'll help with availability and quotation.</p></div><a className="button button-primary" href={quoteLink} target="_blank" rel="noreferrer">Request Quotation ↗</a></div></section>
+    <section className="section product-final-cta"><div className="container"><div><p className="section-kicker">BKT OTR TYRES • UTTAR PRADESH</p><h2>Ready to enquire about this tyre?</h2><p>Send us the tyre size, vehicle/equipment and quantity. We'll help with availability and quotation.</p></div><Link className="button button-primary" href={`/request-quote?model=${encodeURIComponent(product.name)}&size=${encodeURIComponent(product.size)}&vehicle=${encodeURIComponent(product.machinery)}&application=${encodeURIComponent(product.application)}`}>Request Quotation ↗</Link></div></section>
   </main>;
 }
