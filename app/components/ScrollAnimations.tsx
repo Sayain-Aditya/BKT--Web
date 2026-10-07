@@ -1,9 +1,15 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function ScrollAnimations() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
+
   useEffect(() => {
+    if (!mounted) return;
+
     const root = document.documentElement;
     const targets = Array.from(
       document.querySelectorAll<HTMLElement>(
@@ -41,7 +47,7 @@ export default function ScrollAnimations() {
       observer.disconnect();
       root.classList.remove("motion-enhanced");
     };
-  }, []);
+  }, [mounted]);
 
   return null;
 }
