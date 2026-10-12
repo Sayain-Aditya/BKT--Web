@@ -78,10 +78,10 @@ export default function TyreFinder() {
 
   return (
     <section className="tyre-finder" id="tyre-finder">
-      <div className="container">
+      <div className="mks-container">
         <div className="tyre-finder-header">
           <div>
-            <p className="section-kicker">04 / FIND YOUR BKT OTR TYRE</p>
+            <p className="mks-section-kicker">04 / FIND YOUR BKT OTR TYRE</p>
             <h2>Tell us how the tyre works. We&apos;ll show you where to start.</h2>
           </div>
           <p>Choose the working application, equipment and tyre size from the current online range. If your requirement is not listed, contact MKS for assistance.</p>

@@ -1,6 +1,6 @@
 {
   "name": "mks-bkt-otr",
-  "version": "0.1.0",
+  "version": "0.1.0-v41",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -17,7 +17,9 @@
     "@types/node": "^20.19.43",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "autoprefixer": "^10.4.21",
+    "tailwindcss": "^3.4.17"
   },
   "engines": {
     "node": ">=20.9.0"

@@ -36,7 +36,7 @@ export default function CatalogueClient({ products }: { products: BktProduct[] }
 
       <div className="catalog-grid">
         {filtered.map((product, index) => {
-          return <article className="catalog-card" key={product.id}>
+          return <article className="catalog-card" key={product.id} suppressHydrationWarning>
             <Link href={`/bkt-otr-tyres/${product.id}`} className="catalog-card-main">
               <div className="product-image tyre-card-image"><span className="catalog-index">{String(index + 1).padStart(2, "0")}</span><Image src={product.image} alt={`${product.name} BKT OTR tyre`} width={700} height={700} loading="lazy" sizes="(max-width: 700px) 90vw, 320px" /><span className="catalog-product-badge">BKT OTR</span></div>
               <div className="product-info"><p>{product.type}</p><h2>{product.name}</h2><div className="product-size"><b>TYRE SIZE</b>{product.size}</div><div className="product-meta"><span><b>APPLICATION</b>{product.application}</span><span><b>VEHICLE / EQUIPMENT</b>{product.machinery}</span></div></div>
@@ -46,7 +46,7 @@ export default function CatalogueClient({ products }: { products: BktProduct[] }
         })}
       </div>
 
-      {filtered.length === 0 && <div className="empty-catalog"><span className="empty-catalog-label">NO MATCHING OPTION</span><h2>We may still be able to help.</h2><p>Try another tyre size, model or application. If your requirement is not listed, send the machine or tyre details to MKS Concord LLP.</p><div className="empty-catalog-actions"><button type="button" className="button button-ghost" onClick={clearFilters}>Clear search</button><a className="button button-primary" href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hello MKS Concord LLP, I could not find my BKT OTR tyre requirement in the online range. Please help me identify the suitable tyre.")}`} target="_blank" rel="noreferrer">Ask MKS on WhatsApp ↗</a></div></div>}
+      {filtered.length === 0 && <div className="empty-catalog"><span className="empty-catalog-label">NO MATCHING OPTION</span><h2>We may still be able to help.</h2><p>Try another tyre size, model or application. If your requirement is not listed, send the machine or tyre details to MKS Concord LLP.</p><div className="empty-catalog-actions"><button type="button" className="mks-button mks-button-ghost" onClick={clearFilters}>Clear search</button><a className="mks-button mks-button-primary" href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hello MKS Concord LLP, I could not find my BKT OTR tyre requirement in the online range. Please help me identify the suitable tyre.")}`} target="_blank" rel="noreferrer">Ask MKS on WhatsApp ↗</a></div></div>}
     </>
   );
 }

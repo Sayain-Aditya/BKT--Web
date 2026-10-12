@@ -59,7 +59,7 @@ export default function QuoteForm({ initial = {} }: { initial?: QuoteInitial }) 
     </div>
     <p className="form-note">Share the tyre details you know. If you are unsure about the exact BKT model, our team can help identify the requirement.</p>
     <p className="form-note">You can provide either the tyre size, BKT model, vehicle/equipment or application. If you are unsure, send the information you have.</p>
-    <button className="button button-primary quote-submit" type="submit">Continue to WhatsApp ↗</button>
+    <button className="mks-button mks-button-primary quote-submit" type="submit">Continue to WhatsApp ↗</button>
     {submitted && <p className="form-success">WhatsApp enquiry opened. If it did not open, call <a href={`tel:+91${phone}`}>+91 {phone}</a>.</p>}
     <p className="form-privacy">We use the details you enter only to understand your tyre enquiry and respond to you.</p>
   </form>;

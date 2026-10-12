@@ -12,18 +12,18 @@ export default function SiteHeader({ active, showTopbar = true }: SiteHeaderProp
     <>
       {showTopbar && (
         <div className="topbar">
-          <div className="container topbar-inner">
+          <div className="mks-container topbar-inner">
             <span>Serving construction, mining &amp; heavy-equipment customers across Uttar Pradesh</span>
             <a href={`tel:+91${phone}`}>Call +91 91947 02099</a>
           </div>
         </div>
       )}
       <header className="site-header">
-        <div className="container nav">
+        <div className="mks-container nav">
           <Link className="brand" href="/" aria-label="MKS Concord LLP BKT OTR Tyres">
             <div className="brand-logos">
               <Image src="/images/mks-group-logo.jpeg" alt="MKS Group" width={118} height={44} className="mks-logo" priority />
-              <Image src="/images/bkt-logo.png" alt="BKT Tyres" width={96} height={38} className="bkt-logo" priority />
+              <Image src="/images/bkt-logo.png" alt="BKT Tyres" width={96} height={38} className="bkt-logo" style={{ width: "auto" }} priority />
             </div>
             <span className="brand-divider" />
             <span className="brand-text">

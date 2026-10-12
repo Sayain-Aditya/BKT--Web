@@ -36,7 +36,7 @@ export default function ProductViewer({ image, name, size, application }: Produc
         <span className="viewer-interaction-hint">HOVER TO EXPLORE</span>
       </div>
 
-      <div className="viewer-stage product-hero-stage product-viewer-stage" onMouseEnter={playRotation}>
+      <div className="viewer-stage product-hero-stage product-viewer-stage">
         <div className="product-viewer-grid" aria-hidden="true" />
         <div className="product-viewer-ring product-viewer-ring-a" aria-hidden="true" />
         <div className="product-viewer-ring product-viewer-ring-b" aria-hidden="true" />

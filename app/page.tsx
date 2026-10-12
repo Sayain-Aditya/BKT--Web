@@ -4,6 +4,8 @@ import SiteHeader from "./components/SiteHeader";
 import TyreFinder from "./components/TyreFinder";
 import MobileQuoteBar from "./components/MobileQuoteBar";
 import { applications, faqs, featuredProducts, phone, whatsapp } from "../lib/data";
+import { organizationSchema, websiteSchema, localBusinessSchema, breadcrumbSchema, jsonLdGraph } from "../lib/seo";
+import { locations } from "../lib/locations";
 
 export default function Home() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bkt-web.vercel.app";
@@ -17,17 +19,14 @@ export default function Home() {
     }))
   };
   const businessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    ...localBusinessSchema(locations[0]),
     name: "M/S Madhwendra Kumar Singh",
-    brand: { "@type": "Brand", name: "MKS Concord LLP" },
-    description: "BKT OTR tyre distributor operated by MKS Concord LLP, supplying BKT Off-The-Road tyres across Uttar Pradesh.",
-    url: siteUrl,
+    brand: { "@type": "Brand", name: "BKT" },
     telephone: "+91 9194702099",
     email: "as4316664@gmail.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Siddhartha Enclave, 162B, Taramandal",
+      streetAddress: "Siddhartha Enclave, 162B, adjacent to Lakme Salon, Taramandal",
       addressLocality: "Gorakhpur",
       addressRegion: "Uttar Pradesh",
       postalCode: "273017",
@@ -36,9 +35,15 @@ export default function Home() {
     areaServed: { "@type": "State", name: "Uttar Pradesh" },
     knowsAbout: ["BKT OTR tyres", "construction tyres", "mining tyres", "earthmoving tyres", "industrial tyres"]
   };
+  const siteGraph = jsonLdGraph([
+    organizationSchema(),
+    websiteSchema(),
+    businessSchema,
+    breadcrumbSchema([{ name: "Home", path: "/" }])
+  ]);
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteGraph) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <main>
       <SiteHeader active="home" />
