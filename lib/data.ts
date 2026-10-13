@@ -1,5 +1,5 @@
-export const phone = "9194702099";
-export const whatsapp = "https://wa.me/9194702099";
+export const phone = "9194702428";
+export const whatsapp = "https://wa.me/9194702428";
 
 export type BktProduct = {
   id: string;
