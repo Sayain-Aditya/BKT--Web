@@ -14,7 +14,7 @@ export default function SiteHeader({ active, showTopbar = true }: SiteHeaderProp
         <div className="topbar">
           <div className="mks-container topbar-inner">
             <span>Serving construction, mining &amp; heavy-equipment customers across Uttar Pradesh</span>
-            <a href={`tel:+91${phone}`}>Call +91 91947 02099</a>
+            <a href={`tel:+91${phone}`}>Call +91 91947 02428</a>
           </div>
         </div>
       )}
