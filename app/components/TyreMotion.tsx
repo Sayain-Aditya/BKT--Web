@@ -1,13 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useLottie } from "lottie-react";
-import animationData from "../../public/loader-animation.json";
-
-function LottieAnimation() {
-  const { View } = useLottie({ animationData, loop: true, autoplay: true });
-  return <div style={{ width: 220, height: 56 }}>{View}</div>;
-}
 
 export default function TyreMotion() {
   const [phase, setPhase] = useState<"hidden" | "visible" | "done">("hidden");
@@ -46,15 +39,24 @@ export default function TyreMotion() {
           width: 340,
           height: 340,
           background:
-            "radial-gradient(circle, rgba(168,212,0,.6) 0%, rgba(168,212,0,.2) 40%, transparent 70%)",
-          filter: "blur(42px)",
+            "radial-gradient(circle, rgba(168,212,0,.65) 0%, rgba(168,212,0,.22) 38%, transparent 68%)",
+          filter: "blur(44px)",
           animation: "loader-glow-breathe 2.2s ease-in-out infinite",
         }}
       />
 
-      {/* lottie sits on top */}
-      <div aria-hidden="true" className="relative z-10 flex flex-col items-center">
-        <LottieAnimation />
+      {/* progress bar */}
+      <div aria-hidden="true" className="relative z-10 flex flex-col items-center gap-5">
+        <div className="w-[180px] h-[3px] rounded-full bg-[#1e2822] overflow-hidden">
+          <div
+            className="h-full rounded-full"
+            style={{
+              background: "linear-gradient(90deg,#0b8f3c,#b8dc35)",
+              animation: "loader-progress 2.2s cubic-bezier(.4,0,.2,1) .2s forwards",
+              width: 0,
+            }}
+          />
+        </div>
       </div>
 
       {/* footer label */}
