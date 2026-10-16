@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   keywords: ["BKT OTR tyres", "BKT tyres Uttar Pradesh", "OTR tyres", "construction tyres", "mining tyres", "earthmoving tyres", "BKT OTR tyre distributor"],
+  verification: { google: "tAxwI0Hcb2VkLTSWQzInDckn_ZHTKM9iuY3qEsbgW0c" },
   robots: { index: true, follow: true },
   alternates: { canonical: absoluteUrl("/") },
   openGraph: {

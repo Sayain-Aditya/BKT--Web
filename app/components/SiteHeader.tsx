@@ -22,7 +22,7 @@ export default function SiteHeader({ active, showTopbar = true }: SiteHeaderProp
         <div className="mks-container nav">
           <Link className="brand" href="/" aria-label="MKS Concord LLP BKT OTR Tyres">
             <div className="brand-logos">
-              <Image src="/images/mks-group-logo.jpeg" alt="MKS Group" width={118} height={44} className="mks-logo" priority />
+              <Image src="/images/MKS Logo (1).png" alt="MKS Group" width={118} height={44} className="mks-logo" priority />
               <Image src="/images/bkt-logo.png" alt="BKT Tyres" width={96} height={38} className="bkt-logo" style={{ width: "auto" }} priority />
             </div>
             <span className="brand-divider" />
