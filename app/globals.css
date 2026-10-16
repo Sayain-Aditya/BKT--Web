@@ -1390,20 +1390,15 @@ body:has([aria-label="Loading"]) { overflow:hidden; }
 
 /* V30 — premium BKT product viewer */
 .viewer-badge-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
-.viewer-interaction-hint{font-size:8px;font-weight:950;letter-spacing:.13em;color:#758078}
 .product-viewer-shell{padding:18px;background:#e8ede8}
 .product-viewer-stage{isolation:isolate;cursor:default}
 .product-viewer-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(11,143,60,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(11,143,60,.045) 1px,transparent 1px);background-size:38px 38px;mask-image:radial-gradient(circle at center,#000 20%,transparent 78%);pointer-events:none}
-.product-viewer-ring{position:absolute;border-radius:50%;border:1px solid rgba(11,143,60,.2);pointer-events:none;transition:transform .8s ease,opacity .8s ease}
+.product-viewer-ring{position:absolute;border-radius:50%;border:1px solid rgba(11,143,60,.2);pointer-events:none;transition:opacity .45s ease}
 .product-viewer-ring-a{width:72%;aspect-ratio:1;border-style:dashed;opacity:.55}
 .product-viewer-ring-b{width:58%;aspect-ratio:1;opacity:.7}
 .product-viewer-image{position:relative;z-index:3;width:84%;height:84%;display:grid;place-items:center;transform-origin:center;transition:transform .9s cubic-bezier(.2,.8,.2,1),filter .45s ease;filter:drop-shadow(0 28px 24px rgba(0,0,0,.2));will-change:transform}
 .product-viewer-image img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block}
 .product-viewer-stage:hover .product-viewer-image{filter:drop-shadow(0 34px 28px rgba(0,0,0,.25))}
-.product-viewer-stage:hover .product-viewer-ring-a{transform:scale(1.035) rotate(18deg);opacity:.9}
-.product-viewer-stage:hover .product-viewer-ring-b{transform:scale(.97) rotate(-10deg)}
-.product-viewer-image.is-rotating{animation:product-viewer-settle .9s cubic-bezier(.2,.8,.2,1)}
-@keyframes product-viewer-settle{0%{scale:1}35%{scale:1.035}72%{scale:1.012}100%{scale:1}}
 .product-viewer-spec-chip,.product-viewer-size-chip{position:absolute;z-index:5;background:#101513;color:#fff;box-shadow:0 16px 32px rgba(0,0,0,.16);display:grid;gap:4px}
 .product-viewer-spec-chip{left:18px;bottom:18px;max-width:190px;padding:11px 13px}
 .product-viewer-size-chip{right:18px;top:18px;padding:11px 13px;min-width:110px}
@@ -1411,11 +1406,8 @@ body:has([aria-label="Loading"]) { overflow:hidden; }
 .product-viewer-spec-chip strong,.product-viewer-size-chip strong{font-size:11px;line-height:1.25}
 .product-viewer-size-chip strong{font-size:15px;letter-spacing:-.02em}
 .product-viewer-controls{align-items:center}
-.viewer-action-button{border:1px solid #cfd7d1;background:#101513;color:#fff;min-height:38px;padding:0 13px;font:inherit;font-size:9px;font-weight:950;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:transform .2s ease,background .2s ease}
-.viewer-action-button span{color:#a8d400;font-size:16px;vertical-align:-1px;margin-right:5px}
-.viewer-action-button:hover{background:#0b8f3c;transform:translateY(-1px)}
-@media(max-width:640px){.viewer-interaction-hint{display:none}.product-viewer-shell{padding:12px}.product-viewer-spec-chip{left:10px;bottom:10px}.product-viewer-size-chip{right:10px;top:10px}.product-viewer-controls{display:grid;grid-template-columns:1fr 1fr}.viewer-action-button{width:100%}.product-viewer-stage{min-height:330px;height:330px}}
-@media(prefers-reduced-motion:reduce){.product-viewer-image,.product-viewer-ring{transition:none!important}.product-viewer-image.is-rotating{animation:none!important}.product-viewer-stage:hover .product-viewer-ring-a,.product-viewer-stage:hover .product-viewer-ring-b{transform:none}}
+@media(max-width:640px){.product-viewer-shell{padding:12px}.product-viewer-spec-chip{left:10px;bottom:10px}.product-viewer-size-chip{right:10px;top:10px}.product-viewer-controls{display:grid;grid-template-columns:1fr 1fr}.product-viewer-stage{min-height:330px;height:330px}}
+@media(prefers-reduced-motion:reduce){.product-viewer-image,.product-viewer-ring{transition:none!important}}
 
 /* V31 — trust + conversion */
 .why-mks-section { background:#f7f9f6; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
