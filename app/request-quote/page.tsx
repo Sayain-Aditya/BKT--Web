@@ -4,10 +4,10 @@ import SiteHeader from '../components/SiteHeader';
 import { buildMetadata } from "../../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Request a BKT OTR Tyre Quotation | MKS Concord LLP",
-  description: "Request BKT OTR tyre availability and quotation from MKS Concord LLP. Share tyre size, vehicle or equipment, application, quantity and location.",
+  title: "Tyre Price & Availability Enquiry | MKS Concord LLP",
+  description: "Enquire about tyre prices, availability and BKT OTR tyre options from MKS Concord LLP. Share the tyre size, equipment, application, quantity and location for a quotation.",
   path: "/request-quote",
-  keywords: ["BKT OTR tyre quotation", "BKT tyre enquiry", "OTR tyre quote Uttar Pradesh"]
+  keywords: ["tyre price enquiry", "tyre quotation Uttar Pradesh", "tyre availability", "OTR tyre quote", "BKT tyre enquiry", "BKT OTR tyre quotation"]
 });
 
 export default async function RequestQuotePage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
@@ -22,8 +22,8 @@ export default async function RequestQuotePage({ searchParams }: { searchParams:
         <div className="mks-container quote-page-grid">
           <div>
             <p className="mks-section-kicker mks-section-kicker-light">BKT OTR TYRES • UTTAR PRADESH</p>
-            <h1>Request a quotation for your tyre requirement.</h1>
-            <p className="quote-page-lead">Tell us the BKT OTR tyre, vehicle or equipment and quantity you need. We will use the details to understand your requirement and respond with availability and quotation.</p>
+            <h1>Ask about tyre prices and availability.</h1>
+            <p className="quote-page-lead">Tell us the tyre size, BKT OTR model if known, equipment, application and quantity you need. We will review your requirement and respond with availability and a quotation.</p>
             <div className="quote-form-points"><span>01 Contact details</span><span>02 Tyre requirement</span><span>03 WhatsApp enquiry</span></div>
             <div className="quote-benefits"><span>✓ No public pricing</span><span>✓ WhatsApp enquiry</span><span>✓ Supply across Uttar Pradesh</span><span>✓ Head Office: Gorakhpur</span></div>
           </div>

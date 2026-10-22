@@ -4,10 +4,10 @@ import { locations } from "../../lib/locations";
 import { buildMetadata, breadcrumbSchema, jsonLdGraph, absoluteUrl, organizationSchema } from "../../lib/seo";
 
 export const metadata = buildMetadata({
-  title: "MKS Concord LLP Locations in Uttar Pradesh | Gorakhpur, Ayodhya, Anpara & Varanasi",
-  description: "Find MKS Concord LLP locations in Gorakhpur, Ayodhya, Anpara and Varanasi, Uttar Pradesh. Explore local support for BKT OTR tyres and construction-equipment requirements.",
+  title: "Tyre Supplier Locations in Uttar Pradesh | MKS Concord LLP",
+  description: "Contact MKS Concord LLP for BKT OTR tyres and heavy-duty construction, mining and industrial equipment tyre enquiries across Uttar Pradesh. View our listed locations and request availability.",
   path: "/locations",
-  keywords: ["MKS Concord LLP locations", "BKT OTR tyres Uttar Pradesh", "BKT tyres Gorakhpur", "BKT tyres Ayodhya", "BKT tyres Anpara", "BKT tyres Varanasi"]
+  keywords: ["tyre supplier Uttar Pradesh", "tyres Gorakhpur", "OTR tyres Uttar Pradesh", "MKS Concord LLP locations", "BKT OTR tyres Uttar Pradesh", "BKT tyres Gorakhpur", "BKT tyres Ayodhya", "BKT tyres Anpara", "BKT tyres Varanasi"]
 });
 
 export default function LocationsPage() {

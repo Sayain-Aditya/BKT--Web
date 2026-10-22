@@ -5,7 +5,7 @@ export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bkt-web.verc
 export const siteName = "MKS Concord LLP";
 export const distributorName = "M/S Madhwendra Kumar Singh";
 export const siteDescription =
-  "M/S Madhwendra Kumar Singh, operated by MKS Concord LLP, supplies BKT Off-The-Road tyres for construction, mining, earthmoving, infrastructure and industrial applications across Uttar Pradesh.";
+  "Looking for tyres in Uttar Pradesh? M/S Madhwendra Kumar Singh, operated by MKS Concord LLP, supplies BKT OTR tyres for construction, mining, earthmoving, roadwork and industrial equipment. Explore tyre sizes and applications or request availability and a quotation.";
 
 export const defaultOgImage = "/images/bkt-logo.png";
 

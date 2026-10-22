@@ -7,16 +7,16 @@ import { absoluteUrl, defaultOgImage, siteDescription, siteName, organizationSch
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://bkt-web.vercel.app"),
   title: {
-    default: "BKT OTR Tyres in Uttar Pradesh | MKS Concord LLP",
+    default: "Tyres in Uttar Pradesh | BKT OTR Tyre Supplier | MKS Concord LLP",
     template: "%s | MKS Concord LLP"
   },
   description: siteDescription,
-  keywords: ["BKT OTR tyres", "BKT tyres Uttar Pradesh", "OTR tyres", "construction tyres", "mining tyres", "earthmoving tyres", "BKT OTR tyre distributor"],
+  keywords: ["tyres", "tyre supplier Uttar Pradesh", "tyres Gorakhpur", "OTR tyres", "BKT tyres", "BKT OTR tyres", "construction equipment tyres", "construction tyres", "mining tyres", "earthmoving tyres", "industrial tyres", "heavy-duty tyres", "road construction tyres", "BKT OTR tyre distributor"],
   verification: { google: "tAxwI0Hcb2VkLTSWQzInDckn_ZHTKM9iuY3qEsbgW0c" },
   robots: { index: true, follow: true },
   alternates: { canonical: absoluteUrl("/") },
   openGraph: {
-    title: "BKT OTR Tyres in Uttar Pradesh | MKS Concord LLP",
+    title: "Tyres in Uttar Pradesh | BKT OTR Tyre Supplier | MKS Concord LLP",
     description: siteDescription,
     type: "website",
     locale: "en_IN",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BKT OTR Tyres in Uttar Pradesh | MKS Concord LLP",
+    title: "Tyres in Uttar Pradesh | BKT OTR Tyre Supplier | MKS Concord LLP",
     description: siteDescription,
     images: [absoluteUrl(defaultOgImage)]
   }

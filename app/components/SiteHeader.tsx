@@ -36,6 +36,7 @@ export default function SiteHeader({ active, showTopbar = true }: SiteHeaderProp
           <nav className="desktop-nav" aria-label="Primary navigation">
             <Link className={active === "home" ? "active-nav" : ""} href="/">Home</Link>
             <Link href="/#about">MKS Concord LLP</Link>
+            <Link href="/tyres">Tyres</Link>
             <Link className={active === "range" ? "active-nav" : ""} href="/bkt-otr-tyres">OTR Tyre Range</Link>
             <Link className={active === "applications" ? "active-nav" : ""} href="/#applications">Applications</Link>
             <Link href="/#faq">FAQ</Link>
@@ -48,6 +49,7 @@ export default function SiteHeader({ active, showTopbar = true }: SiteHeaderProp
             <div className="mobile-nav-panel">
               <Link href="/">Home</Link>
               <Link href="/#about">MKS Concord LLP</Link>
+              <Link href="/tyres">Tyres</Link>
               <Link href="/bkt-otr-tyres">BKT OTR Tyre Range</Link>
               <Link href="/#applications">Applications</Link>
               <Link href="/#faq">FAQ</Link>

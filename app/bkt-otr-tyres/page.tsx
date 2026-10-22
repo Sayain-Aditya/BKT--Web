@@ -5,10 +5,10 @@ import CatalogueClient from "./CatalogueClient";
 import { buildMetadata, absoluteUrl, breadcrumbSchema, jsonLdGraph } from "../../lib/seo";
 
 export const metadata = buildMetadata({
-  title: "BKT OTR Tyre Range in Uttar Pradesh | MKS Concord LLP",
-  description: "Explore BKT OTR tyres by size, model and application. MKS Concord LLP supplies BKT Off-The-Road tyres across Uttar Pradesh. Ask for availability and quotation.",
+  title: "OTR Tyres & BKT Tyres in Uttar Pradesh | MKS Concord LLP",
+  description: "Explore OTR tyres and BKT tyres by size, model and application. MKS Concord LLP supplies off-the-road tyres for construction, mining, earthmoving and industrial equipment across Uttar Pradesh. Ask for availability and a quotation.",
   path: "/bkt-otr-tyres",
-  keywords: ["BKT OTR tyre range", "BKT OTR tyres Uttar Pradesh", "BKT tyres Gorakhpur", "construction OTR tyres", "mining OTR tyres", "earthmoving tyres"]
+  keywords: ["OTR tyres", "tyres Uttar Pradesh", "tyres Gorakhpur", "tyre supplier Uttar Pradesh", "BKT tyres", "BKT OTR tyre range", "BKT OTR tyres Uttar Pradesh", "construction equipment tyres", "construction OTR tyres", "mining OTR tyres", "earthmoving tyres", "industrial tyres"]
 });
 
 export default function OtrRangePage() {
@@ -19,7 +19,7 @@ export default function OtrRangePage() {
   return <main>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     <SiteHeader active="range" />
-    <section className="catalog-hero"><div className="mks-container"><div className="catalog-hero-grid"><div><p className="mks-section-kicker">BKT OTR TYRE CATALOGUE</p><h1>Find the right BKT OTR tyre for the job.</h1><p>Browse the current BKT OTR tyre range by size, model and application. Vehicle/equipment information is shown on each card to help you identify a suitable option.</p><div className="catalog-tools"><span>{bktProducts.length} catalogue entries</span><span>Prices on enquiry</span><span>Supply across Uttar Pradesh</span></div></div><div className="catalog-hero-side"><span>01</span><strong>BKT OTR</strong><p>Construction • Mining • Earthmoving • Infrastructure</p></div></div></div></section>
+    <section className="catalog-hero"><div className="mks-container"><div className="catalog-hero-grid"><div><p className="mks-section-kicker">TYRE CATALOGUE / BKT OTR</p><h1>Explore OTR tyres by size and application.</h1><p>Browse BKT off-the-road tyres for construction, mining, earthmoving, road construction and industrial equipment. Search by tyre size, model or application, then ask MKS Concord LLP about availability and a quotation.</p><div className="catalog-tools"><span>{bktProducts.length} catalogue entries</span><span>Prices on enquiry</span><span>Supply across Uttar Pradesh</span></div></div><div className="catalog-hero-side"><span>01</span><strong>BKT OTR</strong><p>Construction • Mining • Earthmoving • Infrastructure</p></div></div></div></section>
     <section className="section products-section" suppressHydrationWarning><div className="mks-container"><CatalogueClient products={bktProducts} /></div></section>
   </main>;
 }
