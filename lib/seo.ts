@@ -62,7 +62,7 @@ export function organizationSchema() {
     legalName: siteName,
     url: siteUrl,
     logo: absoluteUrl("/images/mks-group-logo.jpeg"),
-    email: "as4316664@gmail.com",
+    email: "madhwendra.bkt@gmail.com",
     telephone: ["+91 9194702099", "+91 7704866437"],
     sameAs: []
   };
@@ -87,7 +87,7 @@ export function localBusinessSchema(location = locations[0]) {
     description: location.description,
     url: absoluteUrl(`/locations/${location.slug}`),
     telephone: ["+91 9194702099", "+91 7704866437"],
-    email: "as4316664@gmail.com",
+    email: "madhwendra.bkt@gmail.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: location.address,
